@@ -1,0 +1,50 @@
+---
+import TestimonialCard from "./TestimonialCard.astro";
+
+const testimonials = [
+  {
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+    name: "علی رضایی",
+    title: "مدیر فنی شرکت آرمان",
+    text: "«ایلیا ابرپرداز در اجرای پروژه ما فوق‌العاده عمل کرد. تیم حرفه‌ای و متعهدی دارند و همیشه پاسخگو بودند.»",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/women/47.jpg",
+    name: "سحر محمدی",
+    title: "مدیر محصول قاصدک",
+    text: "«پروژه فروشگاه ما با راهکارهای نوآورانه ایلیا ابرپرداز پیشرفت چشمگیری داشت.»",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    name: "رضا مرادی",
+    title: "مدیر اجرایی توسعه‌سازان",
+    text: "«همکاری با ایلیا ابرپرداز یکی از بهترین تجربه‌های ما در توسعه نرم‌افزار بود.»",
+  },
+];
+---
+
+<section id="testimonials" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-extrabold text-center text-teal-400 mb-8">
+      آنچه مشتریان ما می‌گویند
+    </h2>
+
+    <div>
+      <div class="flex h-full">
+        {
+          testimonials.map((testimonial, index) => (
+            <div class="px-4">
+              <TestimonialCard
+                image={testimonial.image}
+                name={testimonial.name}
+                title={testimonial.title}
+                text={testimonial.text}
+                active={true}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,21 +1,87 @@
 ---
-import Layout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
-import Features from "../components/Features.astro";
-import Extension from "../components/Extension.astro";
-import Customization from "../components/Customization.astro";
-
+import About from "./about.astro";
+import Services from "./services.astro";
+import Projects from "./projects.astro";
+import Jobs from "./jobs.astro";
+import Testimonials from "./testimonials.astro";
+import Contact from "./contact.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 ---
 
-<Layout title="WhiteSpace - Get More Done with WhiteSpace">
-  <Header />
-  <main>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ایلیا ابرپرداز | شرکت توسعه نرم‌افزار</title>
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+    <style>
+      .rtl {
+        direction: rtl;
+      }
+    </style>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="bg-gray-50 rtl w-full">
+    <Navbar />
     <Hero />
-    <Features />
-    <Extension />
-    <Customization />
-  </main>
-  <Footer />
-</Layout>
+    <About />
+    <Services />
+    <Projects />
+    <Jobs />
+    <TestimonialsSlider />
+    <Contact />
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // Floating animations
+  document.querySelectorAll(".animate-float").forEach((el) => {
+    el.animate(
+      [
+        { transform: "translateY(0)" },
+        { transform: "translateY(-40px)" },
+        { transform: "translateY(0)" },
+        { transform: "translateX(-30px)" },
+        { transform: "translateX(0)" },
+      ],
+      {
+        duration: 5500,
+        iterations: Infinity,
+      }
+    );
+  });
+  document.querySelectorAll(".animate-float-rev").forEach((el) => {
+    el.animate(
+      [
+        { transform: "translateY(0)" },
+        { transform: "translateY(50px)" },
+        { transform: "translateY(0)" },
+        { transform: "translateX(40px)" },
+        { transform: "translateX(0)" },
+      ],
+      {
+        duration: 5500,
+        iterations: Infinity,
+      }
+    );
+  });
+  // Animation on scroll
+  function onScrollAnimate() {
+    document.querySelectorAll('[data-animate="fade-in"]').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add("show");
+      }
+    });
+  }
+  onScrollAnimate();
+  window.addEventListener("scroll", onScrollAnimate);
+</script>

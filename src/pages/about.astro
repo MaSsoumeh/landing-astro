@@ -1,81 +1,55 @@
----
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css";
-
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Masoumeh",
-  country: "Iran",
-  occupation: "Frontend Developer",
-  hobbies: ["photography", "coding", "walking"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
----
-
-<BaseLayout pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
-
-  <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
-  </p>
-
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
-
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
-    </li>
-    {
-      identity.hobbies.length >= 2 && (
+<section id="about" class="relative py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+        class="rounded-2xl shadow-lg w-full object-cover"
+        alt="معرفی شرکت ایلیا ابرپرداز"
+      />
+    </div>
+    <div>
+      <h2 class="text-3xl font-extrabold mb-4 text-teal-400">
+        درباره ایلیا ابرپرداز
+      </h2>
+      <p class="text-gray-700 text-lg mb-4">
+        شرکت ایلیا ابرپرداز از سال ۱۳۹۲ با هدف ارائه خدمات تخصصی در حوزه توسعه
+        نرم‌افزار، طراحی وب و اپلیکیشن، و مشاوره فناوری راه‌اندازی شد. تیم ما
+        متشکل از توسعه‌دهندگان، طراحان و مشاوران حرفه‌ای است که در پروژه‌های
+        بزرگ داخلی و بین‌المللی مشارکت داشته‌اند.
+      </p>
+      <ul class="space-y-2 text-gray-600 text-base">
         <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+          <i class="fas fa-check text-green-500 ml-2"></i> بیش از ۱۰ سال تجربه در
+          حوزه نرم‌افزار
         </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul class="skill">
-    {skills.map((skill) => <li>{skill}</li>)}
-  </ul>
+        <li>
+          <i class="fas fa-check text-green-500 ml-2"></i> تیمی متخصص و چندرشته‌ای
+        </li>
+        <li>
+          <i class="fas fa-check text-green-500 ml-2"></i> استفاده از تکنولوژی‌های
+          به‌روز جهانی
+        </li>
+        <li>
+          <i class="fas fa-check text-green-500 ml-2"></i> تمرکز بر رضایت مشتریان
+          و پایبندی به تعهدات
+        </li>
+      </ul>
+    </div>
+  </div>
 
-  {happy && <p>I am happy to be learning Astro!</p>}
-
-  {finished && <p>I finished this tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
-</BaseLayout>
-
-<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
-  h1 {
-    color: purple;
-  }
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-</style>
+  <svg
+    class="absolute left-10 bottom-0 hidden md:block w-24 opacity-30 z-0 animate-float-rev"
+    viewBox="0 0 200 200"
+    ><circle fill="#f4ddb0" cx="100" cy="100" r="90"></circle></svg
+  >
+  <svg
+    class="absolute left-14 bottom-30 hidden md:block w-50 opacity-25 z-0 animate-float"
+    viewBox="0 0 200 200"
+    ><circle fill="#bdede8" cx="100" cy="100" r="90"></circle></svg
+  >
+  <svg
+    class="absolute right-5 top-0 hidden md:block w-25 opacity-25 z-0 animate-float"
+    viewBox="0 0 200 200"
+    ><circle fill="#bdede8" cx="100" cy="100" r="90"></circle></svg
+  >
+</section>

@@ -2,7 +2,7 @@
 
 ---
 
-<button id="themeToggle">
+<button id="themeToggle" class="hidden md:flex">
   <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
@@ -24,7 +24,7 @@
     cursor: pointer;
   }
   .sun {
-    fill: black;
+    fill: white;
   }
   .moon {
     fill: transparent;
@@ -34,7 +34,7 @@
     fill: transparent;
   }
   :global(.dark) .moon {
-    fill: white;
+    fill: rgb(48, 48, 230);
   }
 </style>
 

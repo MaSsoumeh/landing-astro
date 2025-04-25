@@ -1,123 +1,16 @@
----
-
----
-
-<section class="hero section-colored">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Get More Done with WhiteSpace</h1>
-      <p>
-        The all-in-one solution for teams to collaborate, manage projects, and
-        boost productivity.
-      </p>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">Get Started for Free</a>
-        <a href="#" class="btn btn-outline">Watch Demo</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="/images/hero-image.png" alt="WhiteSpace Dashboard" />
-    </div>
+<section class="pt-32 bg-teal-900 pb-16 text-white text-center w-full">
+  <div class="max-w-3xl mx-auto px-5">
+    <h1 class="text-2xl md:text-5xl font-bold mb-10 leading-tight">
+      توسعه راهکارهای نرم‌افزاری خلاقانه
+    </h1>
+    <p class="text-lg md:text-xl mb-10 mt-10">
+      ما در ایلیا ابرپرداز با تیمی متخصص و خلاق، به کسب‌وکارها کمک می‌کنیم تا
+      آینده دیجیتال خود را بسازند. از ایده تا اجرا در کنار شما هستیم.
+    </p>
+    <a
+      href="#contact"
+      class="px-8 py-3 rounded-xl border text-amber-500 font-bold text-lg hover:bg-gray-200 transition"
+      >مشاوره رایگان</a
+    >
   </div>
 </section>
-
-<style>
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-secondary)
-    );
-    padding-top: 80px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-    background-image: url("/images/hero-bg.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.05;
-    z-index: 0;
-  }
-
-  .hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-content {
-    flex: 1;
-    max-width: 600px;
-  }
-
-  .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    color: white;
-  }
-
-  .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .hero .btn-outline {
-    border-color: white;
-    color: white;
-  }
-
-  .hero .btn-outline:hover {
-    background-color: white;
-    color: var(--color-primary);
-  }
-
-  .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-
-  @media (max-width: 992px) {
-    .hero .container {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .hero-content {
-      margin-bottom: 3rem;
-    }
-
-    .hero-buttons {
-      justify-content: center;
-    }
-
-    .hero-image {
-      justify-content: center;
-    }
-  }
-</style>
