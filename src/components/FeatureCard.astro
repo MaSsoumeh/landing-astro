@@ -1,0 +1,431 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+---
+
+<div class="feature-card">
+  <div class="feature-icon">
+    <img src={`/images/icons/${icon}`} alt={title} />
+  </div>
+  <div class="feature-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href="#" class="feature-link">Learn More →</a>
+  </div>
+</div>
+
+<style>
+  .feature-card {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    padding: 2rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-icon img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .feature-content h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .feature-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+</style>
+<!-- 
+9. src/components/PricingPlans.astro
+---
+import PlanCard from './PlanCard.astro';
+
+const plans = [
+  {
+    name: 'Free',
+    price: '$0',
+    period: 'Forever',
+    features: [
+      'Up to 3 team members',
+      '5 projects',
+      'Basic reporting',
+      'Community support'
+    ],
+    cta: 'Start Free',
+    popular: false
+  },
+  {
+    name: 'Pro',
+    price: '$9',
+    period: 'Per user/month',
+    features: [
+      'Unlimited team members',
+      'Unlimited projects',
+      'Advanced reporting',
+      'Priority support',
+      'Custom fields'
+    ],
+    cta: 'Start Pro',
+    popular: true
+  },
+  {
+    name: 'Enterprise',
+    price: '$19',
+    period: 'Per user/month',
+    features: [
+      'Everything in Pro',
+      'Advanced security',
+      'Custom integrations',
+      'Dedicated account manager',
+      'SSO & SAML'
+    ],
+    cta: 'Contact Sales',
+    popular: false
+  }
+];
+---
+
+<section id="pricing" class="pricing section-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>Choose Your Plan</h2>
+      <p>Select the perfect plan for your team's needs</p>
+    </div>
+    <div class="pricing-grid">
+      {plans.map((plan) => (
+        <PlanCard
+          name={plan.name}
+          price={plan.price}
+          period={plan.period}
+          features={plan.features}
+          cta={plan.cta}
+          popular={plan.popular}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 992px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+</style>
+10. src/components/PlanCard.astro
+---
+interface Props {
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  cta: string;
+  popular: boolean;
+}
+
+const { name, price, period, features, cta, popular } = Astro.props;
+---
+
+<div class={`plan-card ${popular ? 'popular' : ''}`}>
+  {popular && <div class="popular-tag">Most Popular</div>}
+  <h3>{name}</h3>
+  <div class="plan-price">
+    <span class="price">{price}</span>
+    <span class="period">{period}</span>
+  </div>
+  <ul class="plan-features">
+    {features.map((feature) => (
+      <li>
+        <span class="icon">✓</span>
+        <span>{feature}</span>
+      </li>
+    ))}
+  </ul>
+  <a href="#" class={`btn ${popular ? 'btn-primary' : 'btn-outline'}`}>{cta}</a>
+</div>
+
+<style>
+  .plan-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plan-card.popular {
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+  }
+  
+  .popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .plan-card h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--color-primary);
+  }
+  
+  .plan-price {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  
+  .period {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+  
+  .plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  .plan-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .plan-features .icon {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .plan-card .btn {
+    width: 100%;
+  }
+  
+  @media (max-width: 992px) {
+    .plan-card.popular {
+      transform: scale(1);
+    }
+  }
+</style>
+11. src/components/Everywhere.astro
+---
+---
+
+<section class="everywhere section-colored">
+  <div class="container">
+    <div class="section-header">
+      <h2>Your work, everywhere you are</h2>
+      <p>Access WhiteSpace from any device, anytime, anywhere</p>
+    </div>
+    <div class="devices-showcase">
+      <img src="/images/devices.png" alt="WhiteSpace on multiple devices" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .everywhere {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  }
+  
+  .everywhere .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .everywhere .section-header h2,
+  .everywhere .section-header p {
+    color: white;
+  }
+  
+  .devices-showcase {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .devices-showcase img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+</style>
+12. src/components/YourData.astro
+---
+---
+
+<section class="your-data section">
+  <div class="container">
+    <div class="your-data-content">
+      <h2>100% your data</h2>
+      <p>We prioritize data security and privacy. Your information remains yours, with complete control over who can access it.</p>
+      <ul class="data-features">
+        <li>
+          <span class="icon">🔒</span>
+          <span>End-to-end encryption</span>
+        </li>
+        <li>
+          <span class="icon">🛡️</span>
+          <span>GDPR compliant</span>
+        </li>
+        <li>
+          <span class="icon">⚙️</span>
+          <span>Fine-grained access controls</span>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-primary">Learn More</a>
+    </div>
+    <div class="your-data-image">
+      <img src="/images/data-security.png" alt="WhiteSpace Data Security" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .your-data .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .your-data-content {
+    flex: 1;
+  }
+  
+  .your-data-image {
+    flex: 1;
+  }
+  
+  .your-data-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-features {
+    list-style: none;
+    margin: 2rem 0;
+  }
+  
+  .data-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .data-features .icon {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 992px) {
+    .your-data .container {
+      flex-direction: column-reverse;
+    }
+  }
+</style>
+13. src/components/Sponsors.astro
+---
+const sponsors = [
+  { name: 'Microsoft', logo: '/images/microsoft.svg' },
+  { name: 'Slack', logo: '/images/slack.svg' },
+  { name: 'Google', logo: '/images/google.svg' }
+];
+---
+
+<section class="sponsors section-light">
+  <div class="container">
+    <h2>Our Sponsors</h2>
+    <div class="sponsors-grid">
+      {sponsors.map((sponsor) => (
+        <div class="sponsor">
+          <img src={sponsor.logo} alt={sponsor.name} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .sponsors {
+    text-align: center;
+  }
+  
+  .sponsors h2 {
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+  }
+  
+  .sponsors-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .sponsor {
+    max-width: 200px;
+  }
+  
+  .sponsor img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .sponsor img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  } -->

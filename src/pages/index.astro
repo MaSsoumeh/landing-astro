@@ -1,9 +1,21 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Extension from "../components/Extension.astro";
+import Customization from "../components/Customization.astro";
 
-const pageTitle = "Home page";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My Blog subtitle</h2>
-</BaseLayout>
+<Layout title="WhiteSpace - Get More Done with WhiteSpace">
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <Extension />
+    <Customization />
+  </main>
+  <Footer />
+</Layout>

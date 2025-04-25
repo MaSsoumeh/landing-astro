@@ -1,6 +1,10 @@
+@import "tailwindcss";
+
+
 html {
   background-color: #f1f5f9;
   font-family: sans-serif;
+  direction: rtl;
 }
 
 body {
@@ -9,6 +13,7 @@ body {
   max-width: 80ch;
   padding: 0.01ch;
   line-height: 1.5;
+  font-family: "Vazirmatn";
 }
 
 * {

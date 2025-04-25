@@ -1,0 +1,72 @@
+---
+import FeatureCard from "./FeatureCard.astro";
+
+const features = [
+  {
+    title: "Project Management",
+    description:
+      "Plan, track, and manage your team's work with customizable workflows.",
+    icon: "feature-1.svg",
+  },
+  {
+    title: "Work Together",
+    description:
+      "Collaborate in real-time with your team from anywhere in the world.",
+    icon: "feature-2.svg",
+  },
+  {
+    title: "Integrate Apps",
+    description:
+      "Connect with the tools you already use to streamline your workflow.",
+    icon: "feature-3.svg",
+  },
+];
+---
+
+<section id="features" class="features section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Powerful Features</h2>
+      <p>Everything you need to manage your work in one place</p>
+    </div>
+    <div class="features-grid">
+      {
+        features.map((feature) => (
+          <FeatureCard
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background-color: white;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-header h2 {
+    color: var(--color-primary);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
