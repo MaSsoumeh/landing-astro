@@ -1,22 +1,25 @@
 ---
-import Social from "./Social.astro";
-
-const platform = "github";
-const username = "massoumeh";
+import Social, { SocialMedia } from "./Social.astro";
 ---
 
 <footer>
-  <p>
-    Learn more about my projects on
-    <Social username="Massoumeh" platform="github" />
-    <Social username="zarei-masoumeh" platform="linkedin" />
-  </p>
+  <p>Learn more about my projects on</p>
+
+  <Social username="Massoumeh" platform={SocialMedia.GITHUB} />
+  <Social username="zarei-masoumeh" platform={SocialMedia.LINKEDIN} />
 </footer>
 
 <style>
   footer {
+    width: 100%;
+    border-top: 2px solid lightslategray;
     display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     gap: 1rem;
-    margin-top: 2rem;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: #fff;
   }
 </style>

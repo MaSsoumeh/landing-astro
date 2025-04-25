@@ -1,14 +1,19 @@
 ---
-const { platform, username } = Astro.props;
+export enum SocialMedia {
+  "LINKEDIN" = "LINKEDIN",
+  "GITHUB" = "GITHUB",
+}
+const { platform, username } = Astro.props as {
+  platform: SocialMedia;
+  username: string;
+};
+
+const imgSrc: Record<SocialMedia, string> = {
+  [SocialMedia.LINKEDIN]: "/LinkedIn.svg",
+  [SocialMedia.GITHUB]: "/Github.svg",
+};
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    text-decoration: none;
-  }
-</style>
+<a href={`https://www.${platform}.com/${username}`}
+  ><img src={imgSrc[platform]} alt={platform} width="24px" /></a
+>

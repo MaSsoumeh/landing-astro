@@ -4,10 +4,10 @@ html {
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
+  padding: 0.01ch;
   line-height: 1.5;
 }
 
@@ -18,4 +18,18 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark a {
+  color: #fff;
+}
+
+.dark header,
+.dark footer {
+  background-color: #000;
 }
