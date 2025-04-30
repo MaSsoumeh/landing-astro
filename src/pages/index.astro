@@ -2,8 +2,8 @@
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import About from "./about.astro";
-import Services from "./services.astro";
-import Projects from "./projects.astro";
+import Services from "./services2.astro";
+import Projects from "./projects2.astro";
 import Jobs from "./jobs.astro";
 import Testimonials from "./testimonials.astro";
 import Contact from "./contact.astro";
@@ -23,17 +23,13 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
         direction: rtl;
       }
     </style>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
-    ></script>
   </head>
   <body class="bg-gray-50 rtl w-full">
     <Navbar />
     <Hero />
     <About />
     <Services />
-    <Projects />
+    <!--<Projects />-->
     <Jobs />
     <TestimonialsSlider />
     <Contact />
@@ -73,6 +69,7 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
       }
     );
   });
+
   // Animation on scroll
   function onScrollAnimate() {
     document.querySelectorAll('[data-animate="fade-in"]').forEach((el) => {

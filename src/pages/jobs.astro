@@ -1,52 +1,63 @@
+---
+import Card2 from "../components/Card2.astro";
+---
+
+
 <section
   id="jobs"
-  class="py-16 bg-gray-50 bg-[url(/public/images/Bubble-bg.svg)] bg-no-repeat"
+  class="py-16 bg-[white] h-dvh bg-no-repeat"
 >
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-extrabold text-teal-400 text-center mb-8">
+    <h2 class="text-3xl font-extrabold text-[#3DB1B0] text-center mb-10">
       فرصت‌های شغلی
     </h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-xl shadow p-7 transition hover:shadow-lg">
-        <div class="flex items-center mb-2">
-          <i class="fas fa-user-cog bg-amber-500 text-xl ml-3"></i>
-          <h3 class="font-bold text-lg">برنامه‌نویس فرانت‌اند (React/Vue)</h3>
-        </div>
-        <ul class="text-gray-700 space-y-1 mb-4">
-          <li>تسلط به React.js یا Vue.js و آشنایی با Tailwind CSS</li>
-          <li>سابقه کار حداقل ۲ سال</li>
-          <li>آشنایی با Git و تیم‌های چابک</li>
-        </ul>
-        <a
-          href="#contact"
-          class="px-4 py-2 bg-amber-500 rounded-xl hover:bg-teal-700 text-white transition font-semibold"
-          >ارسال رزومه</a
-        >
-      </div>
-      <div class="bg-white rounded-xl shadow p-7 transition hover:shadow-lg">
-        <div class="flex items-center mb-2">
-          <i class="fas fa-server bg-amber-500 text-xl ml-3"></i>
-          <h3 class="font-bold text-lg">برنامه‌نویس بک‌اند (Node.js/.NET)</h3>
-        </div>
-        <ul class="text-gray-700 space-y-1 mb-4">
-          <li>تسلط به Node.js یا ASP.NET Core</li>
-          <li>سابقه کار حداقل ۳ سال در تیم‌های نرم‌افزاری</li>
-          <li>آشنایی با طراحی RESTful API و پایگاه‌داده SQL/NoSQL</li>
-        </ul>
-        <a
-          href="#contact"
-          class="px-4 py-2 bg-amber-100 bg-amber-500 rounded-xl hover:bg-teal-700 text-white transition font-semibold"
-          >ارسال رزومه</a
-        >
-      </div>
+
+    <div class="flex flex-row gap-8">
+    <Card2/>
+    <Card2/>
+    <Card2/>
     </div>
-    <div class="text-center mt-8">
-      <p class="text-gray-700 text-lg">
-        علاقه‌مند به همکاری؟ <a
-          class="text-teal-800 underline hover:text-amber-500 transition"
-          href="#contact">تماس بگیرید!</a
-        >
-      </p>
-    </div>
+    <!--<div class="grid md:grid-cols-2 gap-8">-->
+    <!--  <div class="bg-white rounded-xl shadow p-7 transition hover:shadow-lg">-->
+    <!--    <div class="flex items-center mb-2">-->
+    <!--      <i class="fas fa-user-cog bg-amber-500 text-xl ml-3"></i>-->
+    <!--      <h3 class="font-bold text-lg">برنامه‌نویس فرانت‌اند (React/Vue)</h3>-->
+    <!--    </div>-->
+    <!--    <ul class="text-gray-700 space-y-1 mb-4">-->
+    <!--      <li>تسلط به React.js یا Vue.js و آشنایی با Tailwind CSS</li>-->
+    <!--      <li>سابقه کار حداقل ۲ سال</li>-->
+    <!--      <li>آشنایی با Git و تیم‌های چابک</li>-->
+    <!--    </ul>-->
+    <!--    <a-->
+    <!--      href="#contact"-->
+    <!--      class="px-4 py-2 bg-amber-500 rounded-xl hover:bg-teal-700 text-white transition font-semibold"-->
+    <!--      >ارسال رزومه</a-->
+    <!--    >-->
+    <!--  </div>-->
+    <!--  <div class="bg-white rounded-xl shadow p-7 transition hover:shadow-lg">-->
+    <!--    <div class="flex items-center mb-2">-->
+    <!--      <i class="fas fa-server bg-amber-500 text-xl ml-3"></i>-->
+    <!--      <h3 class="font-bold text-lg">برنامه‌نویس بک‌اند (Node.js/.NET)</h3>-->
+    <!--    </div>-->
+    <!--    <ul class="text-gray-700 space-y-1 mb-4">-->
+    <!--      <li>تسلط به Node.js یا ASP.NET Core</li>-->
+    <!--      <li>سابقه کار حداقل ۳ سال در تیم‌های نرم‌افزاری</li>-->
+    <!--      <li>آشنایی با طراحی RESTful API و پایگاه‌داده SQL/NoSQL</li>-->
+    <!--    </ul>-->
+    <!--    <a-->
+    <!--      href="#contact"-->
+    <!--      class="px-4 py-2 bg-amber-100 bg-amber-500 rounded-xl hover:bg-teal-700 text-white transition font-semibold"-->
+    <!--      >ارسال رزومه</a-->
+    <!--    >-->
+    <!--  </div>-->
+    <!--</div>-->
+    <!--<div class="text-center mt-8">-->
+    <!--  <p class="text-gray-700 text-lg">-->
+    <!--    علاقه‌مند به همکاری؟ <a-->
+    <!--      class="text-teal-800 underline hover:text-amber-500 transition"-->
+    <!--      href="#contact">تماس بگیرید!</a-->
+    <!--    >-->
+    <!--  </p>-->
+    <!--</div>-->
   </div>
 </section>

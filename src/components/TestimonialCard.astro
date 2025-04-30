@@ -3,12 +3,12 @@ const { image, name, title, text, active } = Astro.props;
 ---
 
 <div
-  class={`bg-amber-50 p-7 rounded-xl shadow flex flex-col items-center text-center transition-all duration-300 ${active ? "ring-2 ring-teal-600 scale-105" : "opacity-70"}`}
+  class={`p-7 rounded-xl shadow flex flex-col items-center text-center transition-all duration-300 ${active ? "ring-2 ring-teal-600 scale-105" : "opacity-70"}`}
 >
   <img
     src={image}
     alt={name}
-    class="w-16 h-16 rounded-full mb-3 border-2 border-teal-400"
+    class="w-16 h-16 rounded-full mb-3 border-2 border-[#3DB1B0]"
   />
   <p class="text-gray-800 italic mb-3">{text}</p>
   <span class="font-bold"
