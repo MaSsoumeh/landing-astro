@@ -1,0 +1,74 @@
+---
+import {twMerge} from "tailwind-merge";
+const {header, title, tags, footer, theme = "dark"} = Astro.props;
+const themeClasses = theme === "dark" ? "bg-[#000035]" : "bg-white";
+---
+
+<div class={twMerge("card", themeClasses)}>
+    <div class="main-content">
+        <div class="header">
+            {header}
+        </div>
+        <p class="heading">{title}</p>
+
+        <div class="tags">
+            {tags?.map((tag: string) => (<span>{tag}</span>))}
+        </div>
+    </div>
+
+    <div class="footer">
+        {footer}
+    </div>
+</div>
+
+<style>
+    .card {
+        width: 320px;
+        height: 350px;
+        padding: 20px;
+        color: white;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        border-radius: 16px;
+        transform-origin: right bottom;
+        border: 2px solid transparent;
+        box-shadow: 0 0 16px 0 #3DB1B0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .card:hover {
+        rotate: 2deg;
+    }
+
+    .main-content {
+        flex: 1;
+    }
+
+    .heading {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 24px 0 16px;
+    }
+
+    .tags {
+        gap: 8px;
+        display: flex;
+    }
+
+    .tags span {
+        padding: 4px 8px;
+        font-weight: 600;
+        font-size: 12px;
+        border-radius: 50em;
+        background-color: #3db1b0;
+        text-transform: uppercase;
+    }
+
+    .footer {
+        color: #717171;
+        font-weight: 600;
+        margin-right: 4px;
+    }
+
+</style>

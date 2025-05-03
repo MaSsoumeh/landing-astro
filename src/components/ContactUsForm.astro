@@ -1,0 +1,110 @@
+<div class="form-container">
+    <div class="form">
+        <span class="heading">تماس با ما</span>
+
+        <input class="input" type="text" required placeholder="نام و نام خانوادگی" />
+        <input class="input" type="text" required placeholder="ایمیل" />
+        <input class="input" type="text" placeholder="شماره تماس" />
+        <textarea class="input" rows="5" required placeholder="پیام شما" />
+
+
+        <div class="send-button-container">
+            <div class="send-button" id="reset-btn">ارسال پیام</div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .form-container {
+        max-width: 700px;
+        margin: 30px;
+        background-color: #001925;
+        padding: 30px;
+        border-left: 5px solid #00cccc;
+        clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%
+        );
+    }
+
+    .heading {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+     .input {
+        color: #87a4b6;
+        width: 100%;
+        background-color: #002733;
+        border: none;
+        outline: none;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        border-left: 1px solid transparent;
+    }
+
+     .input:focus {
+        border-left: 5px solid #00cccc;
+    }
+
+     .textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background-color: #013747;
+        color: #00cccc;
+        font-weight: bold;
+        resize: none;
+        max-height: 150px;
+        margin-bottom: 20px;
+        border-left: 1px solid transparent;
+        transition: all 0.2s ease-in-out;
+    }
+
+     .textarea:focus {
+        border-left: 5px solid #00cccc;
+    }
+
+    {
+        display: flex;
+        gap: 10px;
+    }
+
+    .send-button-container {
+        filter: drop-shadow(1px 1px 0px #ffffff);
+        flex-basis: 30%;
+    }
+
+
+    .send-button {
+        position: relative;
+        text-align: center;
+        padding: 10px;
+        color: #00cccc;
+        font-weight: bold;
+        background: #001925;
+        clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0 100%
+        );
+        transition: all 0.2s ease-in-out;
+    }
+
+    .send-button:hover {
+        background: #00cccc;
+        color: #001925;
+    }
+</style>

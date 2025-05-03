@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+import Hamburger from "./Hamburger.astro";
+
+const menuItems = [{
+        title:"معرفی شرکت",
+        href:"#about"
+    }, {
+        title: "پروژه‌ها",
+        href: "projects"
+    }, {
+    title: "خدمات ما",
+    href: "services"
+    }, {
+        title: "فرصت‌های شغلی",
+        href: "jobs"
+    }, {
+        title: "مشتریان",
+        href: "customers"
+    }, {
+        title: "تماس با ما",
+        href: "contact-us"
+    },
+]
+---
+
+<nav class="bg-gradient-to-r bg-[#000036] shadow-[0_4px_24px_0_rgba(0,0,0,0.08)] fixed w-full z-30">
+  <div class="max-w-7xl flex items-center justify-between py-3 px-5">
+    <div class="flex items-center space-x-reverse gap-10 space-x-2">
+      <img src="/images/logo.svg" width={74} />
+
+      <ul class="hidden md:flex items-center space-x space-x-6 text-[#3DB1B0] font-light">
+          {menuItems.map((i) => (<li><a href={i.href} class="hover:text-white transition">{i.title}</a></li>))}
+      </ul>
+    </div>
+
+    <Hamburger/>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden bg-white py-4 px-5 hidden shadow-lg">
+      <ul class="flex flex-col space-y-3 text-right font-medium text-[#000036]">
+        {menuItems.map((i) => (<li><a href={i.href} class="hover:text-[#3DB1B0] transition">{i.title}</a></li>))}
+      </ul>
+  </div>
+</nav>

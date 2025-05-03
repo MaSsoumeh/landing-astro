@@ -1,0 +1,40 @@
+---
+const {content} = Astro.props;
+---
+
+<div class="card">
+    <div class="content">
+    {content}
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 16px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        width: 22em;
+        max-width: 80%;
+        padding: 2em 0;
+        background: #FFF;
+        box-shadow: 0 0 26px 0 #3DB1B0;
+        transition: all 0.35s ease;
+    }
+
+    .card::before, .card::after {
+        border-radius: 20px;
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: 0;
+        width: 100%;
+        background: #3DB1B0;
+        height: 4px;
+    }
+
+    .content {
+        color:#000035
+    }
+</style>

@@ -1,0 +1,36 @@
+<button
+    id="menu-btn"
+    class="md:hidden flex flex-col space-y-1 cursor-pointer"
+    aria-label="Toggle menu"
+>
+  <span class="block w-7 h-1 bg-white rounded transition-transform origin-left"></span>
+  <span class="block w-7 h-1 bg-white rounded transition-opacity"></span>
+  <span class="block w-7 h-1 bg-white rounded transition-transform origin-left"></span>
+</button>
+
+
+<style>
+  #menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, -6px);
+  }
+
+  #menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(3px, 8px);
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('menu-btn');
+    menu?.classList.toggle('hidden');
+    btn?.classList.toggle('open');
+  }
+
+  document.getElementById("menu-btn")?.addEventListener("click", toggleMenu);
+</script>
+

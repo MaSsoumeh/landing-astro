@@ -1,0 +1,8 @@
+---
+import {twMerge} from "tailwind-merge";
+const {title,...restProps}=Astro.props;
+---
+
+<p class={twMerge("text-lg leading-10 md:text-2xl",Astro.props.class)} {...restProps}>
+    {title}
+</p>

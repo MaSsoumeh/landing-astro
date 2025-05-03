@@ -1,21 +1,21 @@
 ---
-import Card2 from "../components/Card2.astro";
+import TaggedCard from "../components/card/TaggedCard.astro";
 ---
 
 
 <section
   id="jobs"
-  class="py-16 bg-[white] h-dvh bg-no-repeat"
+  class="py-16 bg-[white] h-dvh bg-no-repeat flex items-center justify-center"
 >
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-extrabold text-[#3DB1B0] text-center mb-10">
       فرصت‌های شغلی
     </h2>
 
-    <div class="flex flex-row gap-8">
-    <Card2/>
-    <Card2/>
-    <Card2/>
+    <div class="flex flex-row gap-8 justify-center">
+    <TaggedCard/>
+    <TaggedCard/>
+    <TaggedCard/>
     </div>
     <!--<div class="grid md:grid-cols-2 gap-8">-->
     <!--  <div class="bg-white rounded-xl shadow p-7 transition hover:shadow-lg">-->

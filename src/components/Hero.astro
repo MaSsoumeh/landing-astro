@@ -1,73 +1,25 @@
 ---
-import Button1 from "../components/Button1.astro";
+import CloudyButton from "./button/CloudyButton.astro";
+import Divider from "./Divider.astro";
+import Heading2Xl from "./heading/Heading2Xl.astro";
+import HeadingLg from "./heading/HeadingLg.astro";
+
 ---
+
 <section class="pt-32 bg-[url('/images/bg-dark.jpg')] bg-gradient-to-r from-[hsla(205,91%,13%,1)] to-[hsla(192,60%,32%,1)] bg-cover pb-16 text-white text-center w-full h-dvh">
+    <div>
+        <div class="max-w-3xl mx-auto px-5 flex flex-col items-center ">
+            <Heading2Xl title="توسعه راهکارهای نرم‌افزاری خلاقانه" style="animation:slideInFromRight 1s ease forwards"/>
 
+            <Divider style=" animation: slideInFromLeft 1s ease 0.5s forwards;"/>
 
-  <div>
-  <div class="max-w-3xl mx-auto px-5 flex flex-col items-center ">
-    <h1 class="text-2xl md:text-5xl font-bold mb-10 leading-tight"    style="
-          animation: slideInFromRight 1s ease forwards;
-          opacity: 0;
-        ">
-      توسعه راهکارهای نرم‌افزاری خلاقانه
-    </h1>
-    <div
-        class="w-full mt-8 h-1 bg-[#3DB1B0]"
-        style="
-          animation: slideInFromLeft 1s ease 0.5s forwards;
-          opacity: 0;
-        "
-    ></div>
+            <HeadingLg class="text-center w-2/3 mb-10 mt-10 opacity-0" style="animation: slideInFromBottom 2s ease 0.5s forwards;"
+                       title="  ما در ایلیا ابرپرداز با تیمی متخصص و خلاق، به کسب‌وکارها کمک می‌کنیم تا آینده دیجیتال خود را بسازند. از ایده تا اجرا در کنار شما هستیم."/>
 
-    <p
-        class="text-lg leading-10 md:text-2xl text-center w-2/3 mb-10 mt-10"
-        style="
-          animation: slideInFromBottom 2s ease 0.5s forwards;
-          opacity: 0;
-        "
-    >
-      ما در ایلیا ابرپرداز با تیمی متخصص و خلاق، به کسب‌وکارها کمک می‌کنیم تا
-      آینده دیجیتال خود را بسازند. از ایده تا اجرا در کنار شما هستیم.
-    </p>
-    <Button1/>
-  </div>
-  </div>
+            <CloudyButton title="درباره ایلیا" style="animation: slideInFromBottom 2s ease 1s forwards; opacity: 0"/>
 
-
-  <style>
-    @keyframes slideInFromRight {
-      0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInFromBottom {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  </style>
-
+        </div>
+    </div>
 </section>
+
+
